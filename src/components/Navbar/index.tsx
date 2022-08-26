@@ -58,8 +58,8 @@ const Navbar = () => {
 
       <div className={belowMenu ? 'tracking-widest text-lg font-bold p-2 uppercase' : 'hidden'}>
         <ul>
-          <Link href="/characters">
-            <li className={router.asPath == '/characters' ? 'text-green-500 border-b-4 border-green-500 py-2' : 'py-2'} onClick={handleBelowMenu}>personagens</li>
+          <Link href="/">
+            <li className={router.asPath == '/' ? 'text-green-500 border-b-4 border-green-500 py-2' : 'py-2'} onClick={handleBelowMenu}>personagens</li>
           </Link>
 
           <Link href="/episodes">
