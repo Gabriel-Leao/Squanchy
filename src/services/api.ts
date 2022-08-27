@@ -2,8 +2,8 @@ import { FilterCharacter } from "../interfaces"
 
 const base = 'https://rickandmortyapi.com/api'
 
-const getAllCharacters = async () => {
-  const data = await fetch(`${base}/character`).then(res => res.json())
+const getAllCharacters = async (page: number) => {
+  const data = await fetch(`${base}/character/?page=${page}`).then(res => res.json())
   return data.results
 }
 

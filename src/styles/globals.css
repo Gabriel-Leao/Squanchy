@@ -4,17 +4,14 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 @layer base {
   body {
-    @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
+    @apply bg-[#ecf0f3] text-[#000204] tracking-wide
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -22,11 +19,11 @@ html {
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Raleway]
+    @apply text-4xl sm:text-5xl md:text-6xl font-[Poppins]
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl
+    @apply text-3xl sm:text-4xl font-[Poppins]
   }
 
   li {
