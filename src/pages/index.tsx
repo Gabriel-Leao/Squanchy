@@ -1,16 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useContext, useEffect, useState } from 'react'
-import CharacterCard from '../components/CharacterCard'
-import Filters from '../components/Filters'
+import { useContext, useEffect } from 'react'
+import Main from '../components/Main'
+import Pagination from '../components/Pagination'
 import Search from '../components/Search'
-import {CharacterContext} from '../context/CharacterContex/index'
-import { Character } from '../interfaces'
+import { CharacterContext } from '../context/CharacterContex'
 
 const Home: NextPage = () => {
-  const { characters } = useContext(CharacterContext)
+  const { search, load, page, getPages } = useContext(CharacterContext)
 
+  useEffect(() => {
+    if (search == '') load(page)
+  }, [search, page])
   console.log('renderizou')
+
+  useEffect(() => {
+    getPages()
+  }, [])
 
   return (
     <div>
@@ -20,16 +27,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/squanch.png" />
       </Head>
       <Search />
-      <Filters />
-      { characters ?
-        characters.map((item: Character, key: number) => (
-          <CharacterCard key={key} item={item}/>
-        ))
-        :
-        <div className='w-full text-center text-red-600'>
-          <h2>Nenhum personagem encontrado! 😔</h2>
-        </div>
-      }
+      <Main />
+      <Pagination />
     </div>
   )
 }

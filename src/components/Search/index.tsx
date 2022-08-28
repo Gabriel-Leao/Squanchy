@@ -1,16 +1,11 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { CharacterContext } from '../../context/CharacterContex'
 
 const Search = () => {
-  const { search, handleSearch, load } = useContext(CharacterContext)
-
-  useEffect(() => {
-    if (search == '') load()
-  }, [search])
+  const { search, handleSearch } = useContext(CharacterContext)
 
   return (
-    <form className='text-center pt-44'>
+    <form className='flex flex-col items-center text-center pt-44'>
       <h1>Personagens</h1>
       <div className='max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center'>
           <input type="text" id="" placeholder='search' 

@@ -8,18 +8,24 @@ interface ContextProvider {
 
 interface CharacterContext {
   characters: Character[],
+  page: number,
+  pagesNumber: number,
   load: Function,
   search: any,
   handleSearch: Function,
-  setSearch: Function
+  setPage: Function,
+  getPages: Function
 }
 
 const defaultValue = {
   characters: [],
+  page: 1,
+  pagesNumber: 0,
   load: () => {},
   search: null,
   handleSearch: () => {},
-  setSearch: () => {}
+  setPage: () => {},
+  getPages: () => {}
 }
 
 export const CharacterContext = createContext<CharacterContext>(defaultValue)
@@ -27,9 +33,11 @@ export const CharacterContext = createContext<CharacterContext>(defaultValue)
 const CharacterProvider = ({ children } : ContextProvider) => {
   const [characters, setCharacters] = useState<Character[]>([])
   const [search, setSearch] = useState('')
+  const [page, setPage] = useState(1)
+  const [pagesNumber, setPagesNumber] = useState(0)
 
-  const load = async () => {
-    const data = await get.getAllCharacters(1)
+  const load = async (page: number) => {
+    const data = await get.getAllCharacters(page)
     setCharacters(data)
   }
 
@@ -39,8 +47,13 @@ const CharacterProvider = ({ children } : ContextProvider) => {
     setCharacters(data)
   }
 
+  const getPages = async () => {
+    const data = await get.PagesLimit()
+    setPagesNumber(data)
+  }
+
   return (
-    <CharacterContext.Provider value={{load, characters, search, handleSearch, setSearch}}>
+    <CharacterContext.Provider value={{load, characters, search, handleSearch, setPage, page, pagesNumber, getPages}}>
       {children}
     </CharacterContext.Provider>
   )

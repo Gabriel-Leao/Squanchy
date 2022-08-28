@@ -46,6 +46,11 @@ const filterSpisode = async (id: number) => {
   return data.results
 }
 
+const PagesLimit = async () => {
+  const data = await fetch('https://rickandmortyapi.com/api/character').then(res => res.json())
+  return data.info.pages
+}
+
 const get = {
   getAllCharacters,
   getAllEpisodes,
@@ -55,7 +60,8 @@ const get = {
   getLocationByName,
   filterCharacter,
   filterLocations,
-  filterSpisode
+  filterSpisode,
+  PagesLimit
 }
 
 export default get

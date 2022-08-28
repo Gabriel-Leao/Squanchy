@@ -24,7 +24,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className={scrollDown ? 'fixed shadow-xl w-full md:h-20 z-[999999] bg-[#DDFED8]' : 'fixed w-full md:h-20 z-[9999999]'}>
+    <div className={scrollDown ? 'fixed shadow-xl w-full md:h-20 z-[999999] bg-[#ecf0f3]' : 'fixed w-full md:h-20 z-[9999999]'}>
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div className='flex items-center ml-10 cursor-pointer'>
           <span className='uppercase mt-5 tracking-widest'>Squanchy!</span>
