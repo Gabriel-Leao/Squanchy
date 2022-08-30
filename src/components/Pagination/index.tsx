@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { CharacterContext } from '../../context/CharacterContex'
 import ReactPaginate from 'react-paginate'
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
@@ -6,21 +6,15 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 const Pagination = () => {
   const { setPage, page, pagesNumber } = useContext(CharacterContext)
 
-  console.log(page)
-
   const handleChange = (page: number) => {
     setPage(page)
     window.scroll(0,0)
   }
 
-  const next = () => {
-    setPage(page + 1)
-    window.scroll(0,0)
-  }
-
   return (
     <div className="flex justify-center my-4">
-      <ReactPaginate  pageCount={pagesNumber} 
+      <ReactPaginate  pageCount={pagesNumber}
+        forcePage={page - 1}
         className="flex gap-2 items-center"
         previousLabel={<AiOutlineArrowLeft />}
         nextLabel={<AiOutlineArrowRight />}

@@ -61,7 +61,7 @@ const get = {
   filterCharacter,
   filterLocations,
   filterSpisode,
-  PagesLimit
+  PagesLimit,
 }
 
 export default get

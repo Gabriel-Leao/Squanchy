@@ -4,12 +4,15 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 @layer base {
+  @font-face {
+    font-family: 'getSchwifty';
+    font-weight: normal;
+    src: url("/fonts/getSchwifty.woff2") format('woff2');
+  }
+
   body {
     @apply bg-[#ecf0f3] text-[#000204] tracking-wide
   }
@@ -19,11 +22,11 @@ html {
   }
 
   h1 {
-    @apply text-4xl sm:text-5xl md:text-6xl font-[Poppins]
+    @apply text-4xl sm:text-5xl md:text-6xl
   }
 
   h2 {
-    @apply text-3xl sm:text-4xl font-[Poppins]
+    @apply text-3xl sm:text-4xl
   }
 
   li {

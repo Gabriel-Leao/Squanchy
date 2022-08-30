@@ -1,6 +1,4 @@
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import logoIMG from '../../../public/logo.png'
+import { useEffect, useState} from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -27,7 +25,9 @@ const Navbar = () => {
     <div className={scrollDown ? 'fixed shadow-xl w-full md:h-20 z-[999999] bg-[#ecf0f3]' : 'fixed w-full md:h-20 z-[9999999]'}>
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div className='flex items-center ml-10 cursor-pointer'>
-          <span className='uppercase mt-5 tracking-widest'>Squanchy!</span>
+          <Link href='/'>
+            <h2 className='uppercase tracking-widest font-getSchwifty text-[#00B0C8]'>Squanchy!</h2>
+          </Link>
         </div>
 
         <div className='hidden md:flex justify-center mr-10 tracking-widest font-bold uppercase'>

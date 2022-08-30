@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { Card } from '../../interfaces'
 
@@ -16,29 +17,31 @@ const CharacterCard = ({ item }: Card) => {
   return (
     <div className='p-2'>
       <div className='h-full mx-auto flex justify-center items-center max-w-[300px] m-0 cursor-pointer'>
-        <div className="border-4 border-[#04ADBF] rounded-lg">
-          <div className='relative inline-block'>
-            <div className='right-2 absolute z-[999]'>
-              <span className={ item.status == 'unknown' ? unknownStatus
-                : item.status == 'Alive' ? aliveStatus
-                : deadStatus }
-              >
-                  {item.status == 'Alive' ? 'vivo' : item.status == 'Dead' ? 'morto': 'desconhecido'}
-              </span>
+        <Link href={`/character/${item.id}`}>
+          <div className="border-4 border-[#00B0C8] rounded-lg" >
+            <div className='relative inline-block'>
+              <div className='right-2 absolute z-[999]'>
+                <span className={ item.status == 'unknown' ? unknownStatus
+                  : item.status == 'Alive' ? aliveStatus
+                  : deadStatus }
+                >
+                    {item.status == 'Alive' ? 'vivo' : item.status == 'Dead' ? 'morto': 'desconhecido'}
+                </span>
+              </div>
+              <Image src={item.image} alt="" height={300} width={300}/>
             </div>
-            <Image src={item.image} alt="" height={300} width={300}/>
+            <h1 className='capitalze text-center text-[20px] pb-4'>{item.name}</h1>
+            {/* <h2 className='capitalize'>espécie: {item.species}</h2> */}
+            <span className='capitalize ml-2 pb-3'>última localização:</span>
+            <p className='capitalize ml-2 text-[18px] pb-4'>{item.location.name}</p>
+            {/* <h2 className={ item.gender == 'unknown' ? unknowGender
+              : item.gender == 'Male' ? menGender
+              : womanGender}
+            >
+              {item.gender == 'Female' ? 'Mulher' : item.gender == 'Male' ? 'Homem': 'desconhecido'}
+            </h2> */}
           </div>
-          <h1 className='capitalze text-center text-[20px] pb-4'>{item.name}</h1>
-          {/* <h2 className='capitalize'>espécie: {item.species}</h2> */}
-          <span className='capitalize ml-2 pb-3'>última localização:</span>
-          <p className='capitalize ml-2 text-[18px] pb-4'>{item.location.name}</p>
-          {/* <h2 className={ item.gender == 'unknown' ? unknowGender
-            : item.gender == 'Male' ? menGender
-            : womanGender}
-          >
-            {item.gender == 'Female' ? 'Mulher' : item.gender == 'Male' ? 'Homem': 'desconhecido'}
-          </h2> */}
-        </div>
+        </Link>
       </div>
     </div>
   )
