@@ -17,7 +17,7 @@ const CharacterCard = ({ item }: Card) => {
   return (
     <div className='p-2'>
       <div className='h-full mx-auto flex justify-center items-center max-w-[300px] m-0 cursor-pointer'>
-        <Link href={`/character/${item.id}`}>
+        <Link href={`/${item.id}`}>
           <div className="border-4 border-[#00B0C8] rounded-lg" >
             <div className='relative inline-block'>
               <div className='right-2 absolute z-[999]'>
