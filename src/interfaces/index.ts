@@ -45,7 +45,47 @@ export interface Card {
 
 
 export interface FilterCharacter {
+  status?: string,
+  species?: string,
+  gender?: string
+}
+
+export interface FIltersButton {
+  item: string,
+  name: string,
+  handleClick: Function,
+}
+
+export interface ContextProvider {
+  children: JSX.Element
+}
+
+export interface characterContext {
+  characters: Character[],
+  page: number,
+  pagesNumber: number,
+  load: Function,
+  search: any,
+  handleSearch: Function,
+  setPage: Function,
+  getPages: Function,
+  setCharacters: Function,
   status: string,
+  gender: string,
   species: string,
-  gender: string
+  setStatus: Function,
+  setGender: Function,
+  setSpecies: Function
+}
+
+export interface CharacterInfo {
+  character: Character
+}
+
+export interface GetCharacters {
+  page?: number,
+  search?: string,
+  status?: string,
+  gender?: string,
+  species?: string,
 }

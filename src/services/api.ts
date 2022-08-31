@@ -1,9 +1,9 @@
-import { FilterCharacter } from "../interfaces"
+import { FilterCharacter, GetCharacters } from "../interfaces"
 
 const base = 'https://rickandmortyapi.com/api'
 
-const getAllCharacters = async (page: number) => {
-  const data = await fetch(`${base}/character/?page=${page}`).then(res => res.json())
+const getCharacters = async ({page, search='', status='', gender='', species=''}: GetCharacters) => {
+  const data = await fetch(`${base}/character/?page=${page}&name=${search}&status=${status}&species=${species}&gender=${gender}`).then(res => res.json())
   return data.results
 }
 
@@ -32,7 +32,7 @@ const getLocationByName = async (name: string) => {
 }
 
 const filterCharacter = async ({status='', species='', gender=''}: FilterCharacter) => {
-  const data = await fetch(`${base}/character/?status${status}&species${species}&gender=${gender}`).then(res => res.json())
+  const data = await fetch(`${base}/character/?status=${status}&species=${species}&gender=${gender}`).then(res => res.json())
   return data.results
 }
 
@@ -46,13 +46,13 @@ const filterSpisode = async (id: number) => {
   return data.results
 }
 
-const PagesLimit = async () => {
-  const data = await fetch('https://rickandmortyapi.com/api/character').then(res => res.json())
-  return data.info.pages
+const PagesLimit = async ({page, search='', status='', gender='', species=''}: GetCharacters) => {
+  const data = await fetch(`${base}/character/?page=${page}&name=${search}&status=${status}&species=${species}&gender=${gender}`).then(res => res.json())
+  if (data.info != undefined) return data.info.pages
 }
 
 const get = {
-  getAllCharacters,
+  getCharacters,
   getAllEpisodes,
   getAllLocation,
   getCharacterByName,

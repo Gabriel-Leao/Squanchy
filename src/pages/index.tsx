@@ -9,16 +9,13 @@ import Search from '../components/Search'
 import { CharacterContext } from '../context/CharacterContex'
 
 const Home: NextPage = () => {
-  const { search, load, page, getPages } = useContext(CharacterContext)
+  const { search, load, page, getPages, status, gender, species } = useContext(CharacterContext)
 
   useEffect(() => {
-    if (search == '') load(page)
-  }, [search, page])
-  console.log('renderizou')
-
-  useEffect(() => {
-    getPages()
-  }, [])
+    if (search == '') load({page, search, status, gender, species})
+    else load({page, search, status, gender, species})
+    getPages({page, search, status, gender, species})
+  }, [search, page, status, gender, species])
 
   return (
       <div>

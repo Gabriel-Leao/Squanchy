@@ -1,21 +1,8 @@
 import { createContext, useState } from "react";
-import { Character } from "../../interfaces";
+import { Character, characterContext, ContextProvider, GetCharacters } from "../../interfaces";
 import get from "../../services/api";
 
-interface ContextProvider {
-  children: JSX.Element
-}
 
-interface CharacterContext {
-  characters: Character[],
-  page: number,
-  pagesNumber: number,
-  load: Function,
-  search: any,
-  handleSearch: Function,
-  setPage: Function,
-  getPages: Function
-}
 
 const defaultValue = {
   characters: [],
@@ -25,35 +12,43 @@ const defaultValue = {
   search: null,
   handleSearch: () => {},
   setPage: () => {},
-  getPages: () => {}
+  getPages: () => {},
+  setCharacters: () => {},
+  status: '',
+  gender: '',
+  species: '',
+  setStatus: () => {},
+  setGender: () => {},
+  setSpecies: () => {}
 }
 
-export const CharacterContext = createContext<CharacterContext>(defaultValue)
+export const CharacterContext = createContext<characterContext>(defaultValue)
 
 const CharacterProvider = ({ children } : ContextProvider) => {
   const [characters, setCharacters] = useState<Character[]>([])
+  const [status, setStatus] = useState('')
+  const [gender, setGender] = useState('')
+  const [species, setSpecies] = useState('')
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
   const [pagesNumber, setPagesNumber] = useState(0)
 
-  const load = async (page: number) => {
-    const data = await get.getAllCharacters(page)
+  const load = async ({page, search, status, gender, species}: GetCharacters) => {
+    const data = await get.getCharacters({page, search, status, gender, species})
     setCharacters(data)
   }
 
-  const handleSearch = async (value: string) => {
-    setSearch(value)
-    const data = await get.getCharacterByName(search)
-    setCharacters(data)
+  const handleSearch = async (Search: string) => {
+    setSearch(Search)
   }
 
-  const getPages = async () => {
-    const data = await get.PagesLimit()
+  const getPages = async ({page, search, status, gender, species}: GetCharacters) => {
+    const data = await get.PagesLimit({page, search, status, gender, species})
     setPagesNumber(data)
   }
 
   return (
-    <CharacterContext.Provider value={{load, characters, search, handleSearch, setPage, page, pagesNumber, getPages}}>
+    <CharacterContext.Provider value={{load, characters, setCharacters, search, handleSearch, setPage, page, pagesNumber, getPages, status, gender, species, setStatus, setGender, setSpecies}}>
       {children}
     </CharacterContext.Provider>
   )
