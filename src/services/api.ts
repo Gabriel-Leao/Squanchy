@@ -31,7 +31,7 @@ const getLocationByName = async (name: string) => {
   return data.results
 }
 
-const filterCharacter = async ({status, species, gender}: FilterCharacter) => {
+const filterCharacter = async ({status='', species='', gender=''}: FilterCharacter) => {
   const data = await fetch(`${base}/character/?status${status}&species${species}&gender=${gender}`).then(res => res.json())
   return data.results
 }
