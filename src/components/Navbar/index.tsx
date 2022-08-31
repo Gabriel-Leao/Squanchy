@@ -1,28 +1,18 @@
-import { useEffect, useState} from 'react'
+import { useState} from 'react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const Navbar = () => {
   const [belowMenu, setBelowMenu] = useState(false)
-  const [scrollDown, setScrollDown] = useState(false)
   const router = useRouter()
-
-  useEffect(() => {
-    const handleScrollDown = () => {
-      if (window.scrollY >= 80) setScrollDown(true) 
-      else setScrollDown(false)
-    }
-
-    window.addEventListener('scroll', handleScrollDown)
-  }, [])
 
   const handleBelowMenu = () => {
     setBelowMenu(!belowMenu)
   }
 
   return (
-    <div className={scrollDown ? 'fixed shadow-xl w-full md:h-20 z-[999999] bg-[#ecf0f3]' : 'fixed w-full md:h-20 z-[9999999]'}>
+    <div className='w-full md:h-20 z-[9999999]'>
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div className='flex items-center ml-10 cursor-pointer'>
           <Link href='/'>

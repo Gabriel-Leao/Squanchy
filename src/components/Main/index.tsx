@@ -8,10 +8,8 @@ const Main = () => {
   const { characters } = useContext(CharacterContext)
 
   return (
-    <main className='mx-auto w-full flex flex-col items-center md:flex-row md:items-start justify-center'>
-      <div className='justify-self-start md:mx-32'>
+    <main className='w-full flex flex-col items-center md:flex-row md:items-start justify-center gap-3'>
         <Filters />
-      </div>
 
       <div className='flex flex-col md:flex-row justify-self-center md:flex-wrap w-[1240px]'>
         { characters ?
@@ -19,7 +17,7 @@ const Main = () => {
             <CharacterCard key={key} item={item}/>
           ))
           :
-          <div className='w-full text-center mr-56 text-red-600'>
+          <div className=' text-center ml-10 text-red-600'>
             <h2>Nenhum personagem encontrado! 😔</h2>
           </div>
         }
