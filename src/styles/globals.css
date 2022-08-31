@@ -32,4 +32,8 @@ html {
   li {
     @apply cursor-pointer
   }
+
+  a:hover {
+    @apply text-inherit
+  }
 }

@@ -15,15 +15,15 @@ const Pagination = () => {
     <div className="flex justify-center my-4">
       <ReactPaginate  pageCount={pagesNumber}
         forcePage={page - 1}
-        className="flex gap-2 items-center"
+        className="flex gap-2 items-center hover:"
         previousLabel={<AiOutlineArrowLeft />}
         nextLabel={<AiOutlineArrowRight />}
-        nextClassName="opacity-50 hover:opacity-100"
-        previousClassName="opacity-50 hover:opacity-100"
-        pageLinkClassName=' flex text-[#fff] text-lg w-[40px] py-2 justify-center rounded-3xl bg-green-500'
+        nextClassName="opacity-40 hover:opacity-100"
+        previousClassName="opacity-40 hover:opacity-100"
+        pageLinkClassName='flex text-[#fff] text-lg w-[40px] py-2 justify-center font-bold rounded-3xl bg-green-500 hover:text-[#fff]'
         activeClassName='opacity-100'
-        onPageChange={(page) => handleChange(page.selected + 1)}
         pageClassName="opacity-50"
+        onPageChange={(page) => handleChange(page.selected + 1)}
       />
     </div>
   )

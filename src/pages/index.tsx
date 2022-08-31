@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import { useContext, useEffect } from 'react'
