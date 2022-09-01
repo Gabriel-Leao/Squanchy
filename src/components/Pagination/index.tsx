@@ -15,7 +15,8 @@ const Pagination = () => {
     <div className="flex justify-center my-4">
       <ReactPaginate  pageCount={pagesNumber}
         forcePage={page - 1}
-        className="flex gap-2 items-center hover:"
+        marginPagesDisplayed={1}
+        className="flex gap-2 items-center"
         previousLabel={<AiOutlineArrowLeft />}
         nextLabel={<AiOutlineArrowRight />}
         nextClassName="opacity-40 hover:opacity-100"
