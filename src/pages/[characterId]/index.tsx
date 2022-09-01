@@ -39,15 +39,21 @@ const CardInfo = ({ character }: CharacterInfo) => {
   return (
     <div className='flex justify-center h-screen'>
       <div className='my-20'>
-        <h2 className='text-center py-4'>{character.name}</h2>
-        <Image src={character.image} alt="" height={300} width={300} layout='responsive'/>
-        <h2 className={ character.status == 'unknown' ? unknownStatus : character.status == 'Alive' ? aliveStatus : deadStatus }>
-          {character.status == 'Alive' ? 'vivo' : character.status == 'Dead' ? 'morto': 'desconhecido'}
+        <h2 className='text-center py-4'>{character.name ? character.name : ''}</h2>
+
+        <Image src={ character.image ? character.image : ''} alt="" height={300} width={300} layout='responsive'/>
+
+        <h2 className={ character.status ? character.status == 'unknown' ? unknownStatus : character.status == 'Alive' ? aliveStatus : deadStatus : ''}>
+          { character.status ? character.status == 'Alive' ? 'vivo' : character.status == 'Dead' ? 'morto': 'desconhecido' : ''}
         </h2>
-        <p className='capitalize'>gênero: {character.gender == 'Female' ? 'feminino' : character.gender == 'Male' ? 'masculino' : character.gender == 'unknown' ? 'desconhecido' : 'sem gênero'}</p>
-        <p className='capitalize'>espécie: {character.species == 'Humanoid' ? 'humanoide' : character.species == 'unknown' ? 'desconhecida' : character.species == 'Human' ? 'humano' : character.species == 'Disease' ? 'doença' : character.species == 'Robot' ? 'robô' : character.species == 'Planet' ? 'planeta' : character.species == 'Mythological' ? 'mitológico' : character.species == 'Poopybutthole' ? 'bunda cagada' : character.species}</p>
-        <p className='capitalize'>origem: {character.origin.name == 'unknown' ? 'desconhecida' : character.origin.name}</p>
-        <p className='capitalize'>última localização: {character.location.name == 'unknown' ? 'desconhecida' : character.location.name}</p>
+
+        <p className='capitalize'>gênero: { character.gender ? character.gender == 'Female' ? 'feminino' : character.gender == 'Male' ? 'masculino' : character.gender == 'unknown' ? 'desconhecido' : 'sem gênero' : ''}</p>
+
+        <p className='capitalize'>espécie: { character.species ? character.species == 'Humanoid' ? 'humanoide' : character.species == 'unknown' ? 'desconhecida' : character.species == 'Human' ? 'humano' : character.species == 'Disease' ? 'doença' : character.species == 'Robot' ? 'robô' : character.species == 'Planet' ? 'planeta' : character.species == 'Mythological' ? 'mitológico' : character.species == 'Poopybutthole' ? 'bunda cagada' : character.species : ''}</p>
+
+        <p className='capitalize'>origem: { character.origin.name ? character.origin.name == 'unknown' ? 'desconhecida' : character.origin.name : ''}</p>
+
+        <p className='capitalize'>última localização: { character.location.name ? character.location.name == 'unknown' ? 'desconhecida' : character.location.name : ''}</p>
       </div>
     </div>
   )
