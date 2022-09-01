@@ -82,10 +82,12 @@ export interface CharacterInfo {
   character: Character
 }
 export interface EpisodePage {
-  episode: Episode
+  episode: Episode,
+  episodesCont: number
 }
 export interface LocationPage {
-  location: Location
+  location: Location,
+  locationCont: number
 }
 
 export interface GetCharacters {
@@ -94,4 +96,10 @@ export interface GetCharacters {
   status?: string,
   gender?: string,
   species?: string,
+}
+export interface InputGroup {
+  count: number,
+  option: string,
+  title: string,
+  func: Function
 }

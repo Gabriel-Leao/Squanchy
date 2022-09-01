@@ -17,7 +17,7 @@ const Main = () => {
               <CharacterCard  key={key} Character={ character }/>
           ))
           :
-          <div className='md:mr-72 text-red-500'><h3>Nenhum personagem encontrado!</h3></div>
+          <div className='lg:mr-72 text-red-500'><h3>Nenhum personagem encontrado!</h3></div>
         }
       </div>
     </main>

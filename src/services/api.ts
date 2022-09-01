@@ -41,7 +41,7 @@ const filterLocations = async (id: number) => {
   return data
 }
 
-const filterEpisode = async (id: number) => {
+const filterEpisode = async (id: string) => {
   const data = await fetch(`${base}/episode/${id}`).then(res => res.json())
   return data.results
 }

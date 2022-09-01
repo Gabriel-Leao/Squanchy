@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const character = await data.json()
 
   return {
-    props: { character },
+    props: { character }
   }
 }
 

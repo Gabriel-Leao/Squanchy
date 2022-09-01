@@ -40,6 +40,7 @@ const CharacterProvider = ({ children } : ContextProvider) => {
 
   const handleSearch = async (Search: string) => {
     setSearch(Search)
+    setPage(1)
   }
 
   const getPages = async ({page, search, status, gender, species}: GetCharacters) => {

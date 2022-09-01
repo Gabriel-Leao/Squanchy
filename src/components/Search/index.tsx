@@ -5,7 +5,7 @@ const Search = () => {
   const { search, handleSearch } = useContext(CharacterContext)
 
   return (
-    <form className='w-full text-center'>
+    <form className='w-full text-center mt-20'>
       <h1 className='font-getSchwifty text-[#00B0C8] my-4'>Personagens</h1>
       <div className='max-w-full h-full mx-auto flex justify-center items-center'>
           <input type="text" id="" placeholder='search' 
