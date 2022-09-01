@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='w-full md:h-20 z-[9999999] py-4 md:mb-32 lg:mb-0'>
+    <div className='w-full md:h-20 z-[9999999] py-4 md:mb-32 lg:mb-0 sm:mb-0'>
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div className='flex items-center ml-10 cursor-pointer'>
           <Link href='/'>
