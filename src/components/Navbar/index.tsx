@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='w-full md:h-20 z-[9999999]'>
+    <div className='w-full md:h-20 z-[9999999] py-4 mb-32 lg:mb-0'>
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div className='flex items-center ml-10 cursor-pointer'>
           <Link href='/'>
@@ -20,7 +20,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className='hidden md:flex justify-center mr-10 tracking-widest font-bold uppercase'>
+        <div className='hidden lg:flex justify-center mr-10 tracking-widest font-bold uppercase'>
           <div className='ml-10 py-4 cursor-pointer'>
             <Link href="/" className='ml-10 py-4 cursor-pointer'>
               <p className={router.asPath == '/' || router.asPath == '/?' ? 'text-green-500 border-b-4 border-green-500 py-2' : 'py-2'}>personagens</p>
@@ -40,12 +40,12 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className='md:hidden mr-5' onClick={handleBelowMenu}>
+        <div className='lg:hidden mr-5' onClick={handleBelowMenu}>
           { belowMenu ? <AiOutlineClose size={25}/> : <AiOutlineMenu size={25}/> }
         </div>
       </div>
 
-      <div className={belowMenu ? 'tracking-widest text-lg font-bold p-2 uppercase z-[999999] bg-[#ecf0f3]' : 'hidden'}>
+      <div className={belowMenu ? 'tracking-widest text-lg font-bold p-2 uppercase z-[999999] bg-[#fff]' : 'hidden'}>
         <ul>
           <Link href="/">
             <li className={router.asPath == '/' || router.asPath == '/?' ? 'text-green-500 border-b-4 border-green-500 py-2' : 'py-2'} onClick={handleBelowMenu}>personagens</li>

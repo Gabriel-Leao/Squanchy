@@ -37,11 +37,11 @@ const filterCharacter = async ({status='', species='', gender=''}: FilterCharact
 }
 
 const filterLocations = async (id: number) => {
-  const data = await fetch(`${base}/location/${id}`).then(res => res.json())
-  return data.results
+  const data = await fetch(`${base}/location/${id}`)
+  return data
 }
 
-const filterSpisode = async (id: number) => {
+const filterEpisode = async (id: number) => {
   const data = await fetch(`${base}/episode/${id}`).then(res => res.json())
   return data.results
 }
@@ -60,7 +60,7 @@ const get = {
   getLocationByName,
   filterCharacter,
   filterLocations,
-  filterSpisode,
+  filterEpisode,
   PagesLimit,
 }
 

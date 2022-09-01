@@ -40,7 +40,7 @@ export interface Episode {
 }
 
 export interface Card {
-  item: Character
+  Character: Character
 }
 
 
@@ -80,6 +80,12 @@ export interface characterContext {
 
 export interface CharacterInfo {
   character: Character
+}
+export interface EpisodePage {
+  episode: Episode
+}
+export interface LocationPage {
+  location: Location
 }
 
 export interface GetCharacters {
