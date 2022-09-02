@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        getSchwifty: ['getSchwifty']
+        getSchwifty: ['getSchwifty'],
+        NotoSans: ["'NotoSans', sans"]
       }
     },
   },

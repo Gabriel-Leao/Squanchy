@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <meta name="keywords" content="Squanchy, Rick and Morty, Rick Morty, Rick, Morty" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="author" content="Gabriel Leão" />
-          <link rel="icon" href="/logo.png" />
+          <link rel="icon" href="/images/logo.png" />
         </Head>
         <Navbar />
         <Component {...pageProps} />
