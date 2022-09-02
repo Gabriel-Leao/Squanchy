@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={belowMenu ? 'tracking-widest text-lg font-bold uppercase z-[999999] bg-[#fff] left-0 top-20 w-[100%] sm:w-[100%] md:w-[100%] p-2 ease-in duration-500' : 'fixed left-[-100%] w-[100%] sm:w-[100%] md:w-[100%] p-2 ease-in duration-500'}>
+      <div className={belowMenu ? 'tracking-widest text-lg font-bold uppercase z-[999999] bg-[#fff] left-0 top-20 w-[100%] sm:w-[100%] md:w-[100%] p-2 ease-in duration-500' : 'fixed left-[-100%] w-[100%] sm:w-[100%] md:w-[100%] p-2 ease-in duration-300'}>
         <ul>
           <Link href="/">
             <li className={router.asPath == '/' || router.asPath == '/?' ? 'text-[#008139] border-b-4 border-[#008139] py-2' : 'py-2'} onClick={handleBelowMenu}>personagens</li>
