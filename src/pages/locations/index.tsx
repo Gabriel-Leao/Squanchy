@@ -34,7 +34,6 @@ const Location = ({ location, locationCont }: LocationPage) => {
 
   const handleLocationChange = async (id: string) => {
     const data = await fetch(`https://rickandmortyapi.com/api/location/${id}`).then(res => res.json())
-    console.log(data)
     setLocationSelected(data)
   }
 
@@ -43,7 +42,7 @@ const Location = ({ location, locationCont }: LocationPage) => {
       <div className="text-center my-2">
         <h2 className="py-2 capitalize">localização: <span className="text-[#00B0C8]">{locationSelected.name}</span></h2>
         <h3 className="py-2 capitalize text-lg">dimensão: {locationSelected.dimension == 'unknown' ? 'desconhecida' : locationSelected.dimension}</h3>
-        <p className="py-2 capitalize">tipo: {locationSelected.type == 'unknown' ? 'desconhecida' : locationSelected.type == 'Planet' ? 'planeta' : locationSelected.type}</p>
+        <p className="py-2 capitalize">tipo: {locationSelected.type == 'unknown' ? 'desconhecid0' : locationSelected.type == 'Planet' ? 'planeta' : locationSelected.type == 'Country' ? 'país' : locationSelected.type == '' ? 'desconhecido' : locationSelected.type }</p>
       </div>
 
       <div className="text-center flex flex-col items-center w-full my-2">
@@ -54,9 +53,13 @@ const Location = ({ location, locationCont }: LocationPage) => {
       </div>
 
       <div className="flex flex-wrap mx-auto justify-center lg:justify-start">
-        { residents.map((resident, key) => (
-          <CharacterCard key={key} Character={resident}/>
-        ))}
+        { residents.length <= 0 ? 
+          <div className='text-red-500'><h3>Nenhum personagem vive neste local!</h3></div>
+          :
+          residents.map((resident, key) => (
+            <CharacterCard key={key} Character={resident}/>
+          ))
+        }
       </div>
     </div>
   )

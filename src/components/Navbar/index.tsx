@@ -12,7 +12,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='w-full md:h-20 z-[9999999] py-4 md:mb-32 lg:mb-0 sm:mb-0'>
+    <div className='w-full md:h-20 z-[9999999] shadow-xl py-4 md:mb-32 lg:mb-0 sm:mb-0'>
       <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
         <div className='flex items-center ml-10 cursor-pointer'>
           <Link href='/'>
@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={belowMenu ? 'tracking-widest text-lg font-bold p-2 uppercase z-[999999] bg-[#fff]' : 'hidden'}>
+      <div className={belowMenu ? 'tracking-widest text-lg font-bold uppercase z-[999999] bg-[#fff] left-0 top-20 w-[100%] sm:w-[100%] md:w-[100%] p-2 ease-in duration-500' : 'fixed left-[-100%] w-[100%] sm:w-[100%] md:w-[100%] p-2 ease-in duration-500'}>
         <ul>
           <Link href="/">
             <li className={router.asPath == '/' || router.asPath == '/?' ? 'text-green-500 border-b-4 border-green-500 py-2' : 'py-2'} onClick={handleBelowMenu}>personagens</li>

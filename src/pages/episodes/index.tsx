@@ -36,7 +36,6 @@ const Episodes = ({ episode, episodesCont }: EpisodePage) => {
 
   const handleEpisodeChange = async (id: string) => {
     const data = await fetch(`https://rickandmortyapi.com/api/episode/${id}`).then(res => res.json())
-    console.log(data)
     setEpisodeSelected(data)
   }
 
