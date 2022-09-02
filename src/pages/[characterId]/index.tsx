@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 const unknownStatus = 'bg-gray-500 text-[#fff] rounded-lg w-full text-center text-[28px] my-4 tracking-widest  px-2'
-const aliveStatus = 'bg-green-500 text-[#fff] rounded-lg w-full text-center text-[28px] my-4 tracking-widest px-2'
+const aliveStatus = 'bg-[#008139] text-[#fff] rounded-lg w-full text-center text-[28px] my-4 tracking-widest px-2'
 const deadStatus = 'bg-red-500 text-[#fff] rounded-lg w-full text-center text-[28px] my-4 tracking-widest px-2'
 
 const CardInfo = ({ character }: CharacterInfo) => {

@@ -1,6 +1,6 @@
-import { FIltersButton } from "../../../interfaces"
+import { FiltersButton } from "../../../interfaces"
 
-const FIltersButton = ({ item, name, handleClick, }: FIltersButton) => {
+const FIltersButton = ({ item, name, handleClick, }: FiltersButton) => {
   return (
     <div>
       <div>

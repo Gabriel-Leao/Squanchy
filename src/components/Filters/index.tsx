@@ -16,7 +16,7 @@ const Filter = () => {
   return (
     <aside className='text-center'>
       <h2>Filtros</h2>
-      <div className='my-2'><a onClick={handleClearFilters} className="underline text-blue-600 cursor-pointer">limpar filtros</a></div>
+      <div className='my-2'><a href='#' onClick={handleClearFilters} className="text-blue-600 cursor-pointer hover:underline hover:text-blue-600">Limpar filtros</a></div>
       <div className="accordion" id="accordionExample">
         <Status />
         <Species />

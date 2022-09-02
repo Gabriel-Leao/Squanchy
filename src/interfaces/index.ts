@@ -43,14 +43,7 @@ export interface Card {
   Character: Character
 }
 
-
-export interface FilterCharacter {
-  status?: string,
-  species?: string,
-  gender?: string
-}
-
-export interface FIltersButton {
+export interface FiltersButton {
   item: string,
   name: string,
   handleClick: Function,

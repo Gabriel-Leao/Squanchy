@@ -1,8 +1,6 @@
 import { createContext, useState } from "react";
 import { Character, characterContext, ContextProvider, GetCharacters } from "../../interfaces";
-import get from "../../services/api";
-
-
+import api from "../../services/api";
 
 const defaultValue = {
   characters: [],
@@ -34,7 +32,7 @@ const CharacterProvider = ({ children } : ContextProvider) => {
   const [pagesNumber, setPagesNumber] = useState(0)
 
   const load = async ({page, search, status, gender, species}: GetCharacters) => {
-    const data = await get.getCharacters({page, search, status, gender, species})
+    const data = await api.getCharacters({page, search, status, gender, species})
     setCharacters(data)
   }
 
@@ -44,7 +42,7 @@ const CharacterProvider = ({ children } : ContextProvider) => {
   }
 
   const getPages = async ({page, search, status, gender, species}: GetCharacters) => {
-    const data = await get.PagesLimit({page, search, status, gender, species})
+    const data = await api.PagesLimit({page, search, status, gender, species})
     setPagesNumber(data)
   }
 

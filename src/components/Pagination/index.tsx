@@ -21,7 +21,7 @@ const Pagination = () => {
         nextLabel={<AiOutlineArrowRight />}
         nextClassName="opacity-40 hover:opacity-100"
         previousClassName="opacity-40 hover:opacity-100"
-        pageLinkClassName='flex text-[#fff] text-lg w-[40px] py-2 justify-center font-bold rounded-3xl bg-green-500 hover:text-[#fff]'
+        pageLinkClassName='flex text-[#fff] text-lg w-[40px] py-2 justify-center font-bold rounded-3xl bg-[#008139] hover:text-[#fff]'
         activeClassName='opacity-100'
         pageClassName="opacity-50"
         onPageChange={(page) => handleChange(page.selected + 1)}

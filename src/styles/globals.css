@@ -11,6 +11,7 @@ html {
     font-family: 'getSchwifty';
     font-weight: normal;
     src: url("/fonts/getSchwifty.woff2") format('woff2');
+    font-display: swap;
   }
 
   body {

@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { Card } from '../../interfaces'
 
 const unknownStatus = 'bg-gray-500 text-[#fff] rounded-lg w-[140px] text-[20px] px-2'
-const aliveStatus = 'bg-green-500 text-[#fff] rounded-lg w-[60px] text-[20px] px-2'
+const aliveStatus = 'bg-[#008139] text-[#fff] rounded-lg w-[60px] text-[20px] px-2'
 const deadStatus = 'bg-red-500 text-[#fff] rounded-lg w-[70px] text-[20px] px-2'
 
 const CharacterCard = ({ Character }: Card) => {
